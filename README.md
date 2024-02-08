@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+## Prerequisites
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Node >= v16.17.0
 
 ## Available Scripts
 
@@ -16,31 +16,66 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
+Runs all the component and/or unit tests
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `npm run playwright`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Runs all the playwright e2e tests.
+You can learn more about playwright [here](https://playwright.dev/docs/intro).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+multi-step-form/
+|-- src/
+|   |-- components/
+|   |   |-- MultiStepForm.tsx
+|   |   |-- PersonalInformation.tsx
+|   |   |-- OtherInformation.tsx
+|   |-- test/
+|   |   |-- PersonalInformation.test.tsx
+|   |   |-- OtherInformation.test.tsx
+|   |   |-- MultiStepForm.test.tsx
+|   |-- App.tsx
+|   |-- index.tsx
+|-- e2e/
+|   |-- e2e.spec.ts
+|-- public/
+|   |-- index.html
+|-- tsconfig.json
+|-- playwright.config.ts
+|-- package.json
+|-- styles.css
+|-- README.md
+```
 
-### `npm run eject`
+### Here's a breakdown of the structure:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- `src/`: This directory contains your React application source code.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - `components/`: Contains individual React components.
+    - `MultiStepForm.tsx`: The main component for the multi-step form.
+    - `PersonalInformation.tsx`: Component for personal information form step1.
+    - `OtherInformation.tsx`: Component for other information form step2.
+  - `test/`: Contains the unit component tests for each individual component.
+    - `PersonalInformation.test.tsx`: Component test for PersonalInformation component.
+    - `OtherInformation.test.tsx`: Component test for OtherInformation component.
+    - `MultiStepForm.test.tsx`: Component test for MultiStepForm component.
+  - `App.tsx`: The entry point of your React application.
+  - `index.tsx`: The main file that renders your React app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `e2e/`: This directory contains end-to-end tests using Playwright and TypeScript.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  - `e2e`.spec.ts: Test file for e2e test.
 
-## Learn More
+- `public/`: Public assets and HTML file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - `index.html`: The HTML template for your React app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `tsconfig.json`: TypeScript configuration file.
+- `playwright.config.ts`: Playwright configuration file.
+- `package.json`: NPM package configuration file.
+- `styles.css`: Global styles for your application.
+- `README.md`: Project documentation.
