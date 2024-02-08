@@ -28,7 +28,7 @@ You can learn more about playwright [here](https://playwright.dev/docs/intro).
 ## Project Structure
 
 ```
-multi-step-form/
+component-test/
 |-- src/
 |   |-- components/
 |   |   |-- MultiStepForm.tsx
